@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music Player</title>
+<style> 
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  text-align: center;
+}
+h1 {
+  margin-bottom: 30px;
+}
+.music-player {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.controls {
+  margin-top: 20px;
+}
+button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #0056b3;
+}
+.button-icon {
+  font-size: 24px;
+}
+.audio-info {
+  margin-top: 20px;
+  font-size: 14px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Music Player</h1>
+  <div class="music-player">
+    <audio id="audio-player" src="C:\Users\91999\Downloads\So Sweet - Lish Grooves (1).mp3" controls></audio>
+    <div class="controls">
+      <button id="play-btn"><i class="button-icon fas fa-play"></i> Play</button>
+      <button id="pause-btn"><i class="button-icon fas fa-pause"></i> Pause</button>
+      <button id="stop-btn"><i class="button-icon fas fa-stop"></i> Stop</button>
+    </div>
+    <div class="audio-info">
+      <p>Artist: Lish Grooves</p>
+      <p>Title: So Sweet</p>
+    </div>
+  </div>
+</div>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const audioPlayer = document.getElementById('audio-player');
+  const playBtn = document.getElementById('play-btn');
+  const pauseBtn = document.getElementById('pause-btn');
+  const stopBtn = document.getElementById('stop-btn');
+
+  playBtn.addEventListener('click', function() {
+    audioPlayer.play();
+  });
+
+  pauseBtn.addEventListener('click', function() {
+    audioPlayer.pause();
+  });
+
+  stopBtn.addEventListener('click', function() {
+    audioPlayer.pause();
+    audioPlayer.currentTime = 0;
+  });
+});
+</script>
+</body>
+</html>
